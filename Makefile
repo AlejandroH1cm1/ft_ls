@@ -11,9 +11,8 @@ $(NAME):
 	@make -C printf/ all
 	@cp printf/libftprintf.a ./
 	@echo "\033[0;5;33mCompiling and building\033[0m"
-	@gcc -c $(FLAGS) $(FILES_C) -I ./includes
+	@gcc -c $(FLAGS) $(FILES_C) src/kane_alloc_wrap.c -I ./includes
 	@gcc -o $(NAME) $(FLAGS) $(FILES_O) -I ./includes -L . -lftprintf
-	@gcc -c src/kane_alloc_wrap.c
 	@gcc -o $(NAME)2 $(FLAGS) $(FILES_O) kane_alloc_wrap.o -I ./includes -L . -lftprintf
 	@cp $(NAME) test/
 	@cp $(NAME)2 test/
@@ -38,9 +37,8 @@ re:	fclean all
 retest:
 	@echo "\033[0;34mRemaking for test\033[0m"
 	@rm $(NAME)
-	@gcc -c $(FLAGS) $(FILES_C) -I ./includes
+	@gcc -c $(FLAGS) $(FILES_C) src/kane_alloc_wrap.c -I ./includes
 	@gcc -o $(NAME) $(FLAGS) $(FILES_O) -I ./includes -L . -lftprintf
-	@gcc -c src/kane_alloc_wrap.c
 	@gcc -o $(NAME)2 $(FLAGS) $(FILES_O) kane_alloc_wrap.o -I ./includes -L . -lftprintf
 	@cp $(NAME) test/
 	@cp $(NAME)2 test/
