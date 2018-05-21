@@ -6,7 +6,7 @@
 /*   By: aherrera <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/16 13:58:04 by aherrera          #+#    #+#             */
-/*   Updated: 2018/05/17 14:09:06 by aherrera         ###   ########.fr       */
+/*   Updated: 2018/05/21 14:23:47 by aherrera         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ void		get_total(char *dir, int mode)
 			t += st->st_blocks;
 		ft_strdel(&aux);
 	}
-	t >= 0 ? ft_printf("total: %d\n", t) : 1;
+	t > 0 ? ft_printf("total: %d\n", t) : 1;
 	free(st);
 	ft_strdel(&dir);
 	ft_strdel(&aux);
